@@ -32,5 +32,5 @@ dotnet add package Serilog.Formatting.Compact
 ### ビルド
 
 ```console
-dotnet run
+dotnet build
 ```

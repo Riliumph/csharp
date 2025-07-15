@@ -1,4 +1,5 @@
 using MsLogging = Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging;
 using Serilog;
 using Serilog.Extensions.Logging;
 
@@ -20,13 +21,13 @@ namespace logger.Logging
             return _loggerFactory!.CreateLogger<T>();
         }
 
-        private static MsLogging.ILoggerFactory CreateFacotory()
+        private static MsLogging.ILoggerFactory CreateFactory()
         {
             Log.Logger = new LoggerConfiguration()
                 .MinimumLevel.Debug()
                 .WriteTo.Console()
                 .CreateLogger();
-
+            // 拡張メソッドのためusing Microsoft.Extensions.Loggingが必要
             return new SerilogLoggerFactory();
         }
     }
