@@ -14,10 +14,7 @@ namespace logger.Logging
             {
                 lock (_lock)
                 {   // double-checked locking pattern
-                    if (_loggerFactory == null)
-                    {
-                        _loggerFactory = CreateFactory();
-                    }
+                    _loggerFactory ??= CreateFactory();
                 }
             }
             return _loggerFactory!.CreateLogger<T>();
