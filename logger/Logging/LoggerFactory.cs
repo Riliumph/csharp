@@ -6,25 +6,31 @@ namespace logger.Logging
 {
     public static class Logger
     {
+        private static readonly object _lock = new();
         private static MsLogging.ILoggerFactory? _loggerFactory;
-
         public static MsLogging.ILogger<T> Get<T>()
         {
             if (_loggerFactory == null)
             {
-                Create();
+                lock (_lock)
+                {   // double-checked locking pattern
+                    if (_loggerFactory == null)
+                    {
+                        _loggerFactory = CreateFactory();
+                    }
+                }
             }
             return _loggerFactory!.CreateLogger<T>();
         }
 
-        private static void Create()
+        private static MsLogging.ILoggerFactory CreateFacotory()
         {
             Log.Logger = new LoggerConfiguration()
                 .MinimumLevel.Debug()
                 .WriteTo.Console()
                 .CreateLogger();
 
-            _loggerFactory = new SerilogLoggerFactory();
+            return new SerilogLoggerFactory();
         }
     }
 }
