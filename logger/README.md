@@ -10,8 +10,12 @@ spdlog的な物を簡単に作ってみる試み。
 ## パッケージ
 
 ```console
+dotnet add package Microsoft.Extensions.Logging
+dotnet add package Serilog
 dotnet add package Serilog.Extensions.Logging
 dotnet add package Serilog.Sinks.Console
+dotnet add package Serilog.Sinks.File
+dotnet add package Serilog.Formatting.Compact
 ```
 
 `logger.csproj`に以下の設定が追加された。
