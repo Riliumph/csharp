@@ -26,3 +26,11 @@ dotnet add package Serilog.Formatting.Compact
     <PackageReference Include="Serilog.Sinks.Console" Version="6.0.0" />
   </ItemGroup>
 ```
+
+## 使用方法
+
+### ビルド
+
+```console
+dotnet run
+```
