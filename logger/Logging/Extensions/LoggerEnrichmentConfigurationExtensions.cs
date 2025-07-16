@@ -1,7 +1,8 @@
+using logger.Logging.Internal;
 using Serilog;
 using Serilog.Configuration;
 
-namespace logger.Logging
+namespace logger.Logging.Extensions
 {
     /// <summary>
     /// CallerEnricherを利用するための拡張メソッドクラス

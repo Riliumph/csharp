@@ -1,9 +1,10 @@
 using System;
 using System.Diagnostics;
+using logger.Logging.Extensions;
 using Serilog.Core;
 using Serilog.Events;
 
-namespace logger.Logging
+namespace logger.Logging.Internal
 {
     /// <summary>
     /// SerilogのILogEventEnricherの実装
@@ -18,11 +19,12 @@ namespace logger.Logging
         private static readonly int SKIP_STACKTRACE_NUM = 3;
         private static readonly string TAG_NAME = "Caller";
 
-        public static string[] ignoreNamespaces =
-        [
-            "Serilog", // Serilog本体
-            "Microsoft",
-        ];
+        private List<string> _ignoreNamespaces;
+
+        public CallerEnricher()
+        {
+            _ignoreNamespaces = ["Serilog", "Microsoft"];
+        }
 
         /// <summary>
         /// ログ出力の直前に呼ばれてlogEventに新しいプロパティを追加する。
@@ -47,7 +49,7 @@ namespace logger.Logging
         /// </summary>
         /// <param name="skip"></param>
         /// <returns></returns>
-        private static StackFrame? FindCallStack(int skip = 0)
+        private StackFrame? FindCallStack(int skip = 0)
         {
             while (true)
             {
@@ -60,7 +62,7 @@ namespace logger.Logging
                 var method = frame.GetMethod();
                 var ns = method!.DeclaringType?.Namespace ?? "";
 
-                if (!ignoreNamespaces.Any(prefix => ns.StartsWith(prefix)))
+                if (!_ignoreNamespaces.Any(ns.StartsWith))
                 {
                     return frame;
                 }

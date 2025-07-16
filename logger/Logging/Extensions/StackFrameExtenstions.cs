@@ -1,6 +1,6 @@
 using System.Diagnostics;
 
-namespace logger.Logging
+namespace logger.Logging.Extensions
 {
     internal static class StackFrameExtensions
     {
