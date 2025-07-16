@@ -1,0 +1,16 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "logger_demo",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build_logger_demo",
+            "program": "${workspaceFolder}/logger_demo/bin/Debug/net9.0/logger_demo.exe",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "stopAtEntry": false,
+            "console": "integratedTerminal"
+        }
+    ]
+}
