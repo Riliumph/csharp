@@ -16,6 +16,8 @@ dotnet add package Serilog.Extensions.Logging
 dotnet add package Serilog.Sinks.Console
 dotnet add package Serilog.Sinks.File
 dotnet add package Serilog.Formatting.Compact
+dotnet add package Serilog.Enrichers.WithCaller
+dotnet add package Serilog.Enrichers.SourceContext
 ```
 
 `logger.csproj`に以下の設定が追加された。
