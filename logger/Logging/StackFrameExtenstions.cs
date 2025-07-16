@@ -2,7 +2,7 @@ using System.Diagnostics;
 
 namespace logger.Logging
 {
-    public static class StackFrameExtensions
+    internal static class StackFrameExtensions
     {
         public static string ToCallerString(this StackFrame frame)
         {

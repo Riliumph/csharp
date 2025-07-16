@@ -1,7 +1,5 @@
 using System;
 using System.Diagnostics;
-using Serilog;
-using Serilog.Configuration;
 using Serilog.Core;
 using Serilog.Events;
 
@@ -10,7 +8,7 @@ namespace logger.Logging
     /// <summary>
     /// SerilogのILogEventEnricherの実装
     /// </summary>
-    class CallerEnricher : ILogEventEnricher
+    internal class CallerEnricher : ILogEventEnricher
     {
         /// <summary>
         /// ログ呼び出し元を特定するために無視するスタックトレースの数。
@@ -49,7 +47,7 @@ namespace logger.Logging
         /// </summary>
         /// <param name="skip"></param>
         /// <returns></returns>
-        public static StackFrame? FindCallStack(int skip = 0)
+        private static StackFrame? FindCallStack(int skip = 0)
         {
             while (true)
             {
@@ -68,24 +66,6 @@ namespace logger.Logging
                 }
                 skip++;
             }
-        }
-    }
-
-    /// <summary>
-    /// CallerEnricherを利用するための拡張メソッドクラス
-    /// </summary>
-    static class CallerEnrichmentConfig
-    {
-        /// <summary>
-        /// Serilogにコール情報を付与して構成を返す拡張メソッド
-        /// </summary>
-        /// <param name="enrichmentConfiguration"></param>
-        /// <returns>Serilogの構成クラス</returns>
-        public static LoggerConfiguration WithCaller(
-            this LoggerEnrichmentConfiguration enrichmentConfiguration
-        )
-        {
-            return enrichmentConfiguration.With<CallerEnricher>();
         }
     }
 }
