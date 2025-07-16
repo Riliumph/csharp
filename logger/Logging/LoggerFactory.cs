@@ -1,6 +1,5 @@
 using Microsoft.Extensions.Logging;
 using Serilog;
-using Serilog.Enrichers;
 using Serilog.Extensions.Logging;
 using Serilog.Formatting.Json;
 using MsLogging = Microsoft.Extensions.Logging;
@@ -11,7 +10,8 @@ namespace logger.Logging
     {
         private static readonly object _lock = new();
         private static MsLogging.ILoggerFactory? _loggerFactory;
-        private static string _logFilePath = "logs/app.log";
+
+        // private static string _logFilePath = "logs/app.log";
 
         /// <summary>
         /// インスタンス取得関数
@@ -38,9 +38,9 @@ namespace logger.Logging
         {
             Log.Logger = new LoggerConfiguration()
                 .MinimumLevel.Debug()
-                .Enrich.FromLogContext()
+                .Enrich.WithCaller()
                 .WriteTo.Console(
-                    outputTemplate: "[{Timestamp:HH:mm:ss} {Level:u3}] {Message:lj}{NewLine}{Exception}"
+                    outputTemplate: "[{Timestamp:HH:mm:ss} {Level:u3} {Caller}] {Message:lj}{NewLine}{Exception}"
                 )
                 .CreateLogger();
             // 拡張メソッドのためusing Microsoft.Extensions.Loggingが必要
