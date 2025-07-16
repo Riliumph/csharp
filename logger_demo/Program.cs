@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using logger_demo.Hoge;
 using logger.Logging;
 using Microsoft.Extensions.Logging;
-using logger_demo.Hoge;
 
 class Program
 {
@@ -13,11 +13,11 @@ class Program
         logger.LogWarning("This is a warning.");
         logger.LogError("This is an error!");
         var ctrl = new HogeController(Logger.Get<HogeController>());
-        var data = new Dictionary<string, object>{
+        var data = new Dictionary<string, object>
+        {
             { "id", 123 },
-            { "name", "TestName" }
+            { "name", "TestName" },
         };
         ctrl.Handle(data);
     }
 }
-
