@@ -23,21 +23,13 @@ class Program
         try
         {
             jsonString = File.ReadAllText(filePath);
-            config = JsonSerializer.Deserialize<Config>(jsonString);
-
-            Console.WriteLine($"Version: {config.Version}");
-            foreach (var task in config.Tasks)
-            {
-                Console.WriteLine(
-                    $"Task: {task.Label}, Command: {task.Command}"
-                );
-            }
+            config = Config.FromJson(jsonString);
             Console.WriteLine($"{config.ToJsonString(true)}");
         }
         catch (JsonException ex)
         {
             config = new Config();
-            Console.WriteLine($"{ex.Message}");
+            Console.WriteLine($"{ex.Message} from {jsonString}");
         }
         catch (Exception ex)
         {

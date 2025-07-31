@@ -10,6 +10,30 @@ namespace JsonConfig
 
         [JsonPropertyName("tasks")]
         public List<TaskItem> Tasks { get; set; } = [];
+
+        public static Config FromJson(string json)
+        {
+            var config = JsonSerializer.Deserialize<Config>(json);
+            if (config == null)
+            {
+                return new Config();
+            }
+            return config;
+        }
+
+        public static bool TryFromJson(string json, out Config config)
+        {
+            try
+            {
+                config = FromJson(json);
+                return true;
+            }
+            catch
+            {
+                config = new Config();
+                return false;
+            }
+        }
     }
 
     public class TaskItem
