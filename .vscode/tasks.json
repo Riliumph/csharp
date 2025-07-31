@@ -10,6 +10,16 @@
                 "${workspaceFolder}/logger_demo/logger_demo.csproj"
             ],
             "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "build_config",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/JsonConfig/JsonConfig.csproj"
+            ],
+            "problemMatcher": "$msCompile"
         }
     ]
 }

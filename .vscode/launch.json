@@ -11,6 +11,17 @@
             "cwd": "${workspaceFolder}",
             "stopAtEntry": false,
             "console": "integratedTerminal"
+        },
+        {
+            "name": "config",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build_config",
+            "program": "${workspaceFolder}/JsonConfig/bin/Debug/net9.0/JsonConfig.exe",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "stopAtEntry": false,
+            "console": "integratedTerminal"
         }
     ]
 }
