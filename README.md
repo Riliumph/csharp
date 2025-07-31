@@ -54,6 +54,22 @@ Download .NET:
 
 ## プロジェクトの作り方
 
+### コンソールデモ
+
 ```console
 dotnet new console -n <your-package-name>
+```
+
+### クラスライブラリ
+
+```console
+dotnet new classlib -n <your-package-name>
+```
+
+### slnへに追加
+
+IntelliSenseを有効化するのに必要
+
+```console
+dotnet sln csharp.sln add StdExt/StdExt.csproj
 ```

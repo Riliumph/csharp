@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "logger_demo", "logger_demo\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonConfig", "JsonConfig\JsonConfig.csproj", "{7FC41E4D-F6EB-40A8-A622-184ADBC3C1BE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StdExt", "StdExt\StdExt.csproj", "{906F26DF-9586-42FF-9AB6-910C445041B3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,18 @@ Global
 		{7FC41E4D-F6EB-40A8-A622-184ADBC3C1BE}.Release|x64.Build.0 = Release|Any CPU
 		{7FC41E4D-F6EB-40A8-A622-184ADBC3C1BE}.Release|x86.ActiveCfg = Release|Any CPU
 		{7FC41E4D-F6EB-40A8-A622-184ADBC3C1BE}.Release|x86.Build.0 = Release|Any CPU
+		{906F26DF-9586-42FF-9AB6-910C445041B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{906F26DF-9586-42FF-9AB6-910C445041B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{906F26DF-9586-42FF-9AB6-910C445041B3}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{906F26DF-9586-42FF-9AB6-910C445041B3}.Debug|x64.Build.0 = Debug|Any CPU
+		{906F26DF-9586-42FF-9AB6-910C445041B3}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{906F26DF-9586-42FF-9AB6-910C445041B3}.Debug|x86.Build.0 = Debug|Any CPU
+		{906F26DF-9586-42FF-9AB6-910C445041B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{906F26DF-9586-42FF-9AB6-910C445041B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{906F26DF-9586-42FF-9AB6-910C445041B3}.Release|x64.ActiveCfg = Release|Any CPU
+		{906F26DF-9586-42FF-9AB6-910C445041B3}.Release|x64.Build.0 = Release|Any CPU
+		{906F26DF-9586-42FF-9AB6-910C445041B3}.Release|x86.ActiveCfg = Release|Any CPU
+		{906F26DF-9586-42FF-9AB6-910C445041B3}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
