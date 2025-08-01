@@ -15,7 +15,7 @@ namespace StdExt.Collections
         ///		<c>true</c> チェック対象がnull / empty
         ///		<c>false</c>チェック対象がそれ以外
         /// </returns>
-        public static bool IsNullOrEmpty<T>(this IEnumerable<T> instance)
+        public static bool IsNullOrEmpty<T>(this IEnumerable<T>? instance)
         {
             if (instance == null)
             {
