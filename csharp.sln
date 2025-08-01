@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonConfig", "JsonConfig\Js
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StdExt", "StdExt\StdExt.csproj", "{906F26DF-9586-42FF-9AB6-910C445041B3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StdExt.Tests", "StdExt.Tests\StdExt.Tests.csproj", "{A6E82859-13C5-42B7-9DD8-7C154BF86389}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,18 @@ Global
 		{906F26DF-9586-42FF-9AB6-910C445041B3}.Release|x64.Build.0 = Release|Any CPU
 		{906F26DF-9586-42FF-9AB6-910C445041B3}.Release|x86.ActiveCfg = Release|Any CPU
 		{906F26DF-9586-42FF-9AB6-910C445041B3}.Release|x86.Build.0 = Release|Any CPU
+		{A6E82859-13C5-42B7-9DD8-7C154BF86389}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6E82859-13C5-42B7-9DD8-7C154BF86389}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6E82859-13C5-42B7-9DD8-7C154BF86389}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{A6E82859-13C5-42B7-9DD8-7C154BF86389}.Debug|x64.Build.0 = Debug|Any CPU
+		{A6E82859-13C5-42B7-9DD8-7C154BF86389}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A6E82859-13C5-42B7-9DD8-7C154BF86389}.Debug|x86.Build.0 = Debug|Any CPU
+		{A6E82859-13C5-42B7-9DD8-7C154BF86389}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6E82859-13C5-42B7-9DD8-7C154BF86389}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6E82859-13C5-42B7-9DD8-7C154BF86389}.Release|x64.ActiveCfg = Release|Any CPU
+		{A6E82859-13C5-42B7-9DD8-7C154BF86389}.Release|x64.Build.0 = Release|Any CPU
+		{A6E82859-13C5-42B7-9DD8-7C154BF86389}.Release|x86.ActiveCfg = Release|Any CPU
+		{A6E82859-13C5-42B7-9DD8-7C154BF86389}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
