@@ -21,3 +21,7 @@ $ dotnet build
 ```console
 $ dotnet test
 ```
+
+```console
+$ dotnet test --logger "console;verbosity=detailed"
+```

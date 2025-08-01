@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace StdExt.Enumerable
+namespace StdExt.Collections
 {
     public static class EnumerableExtender
     {

@@ -1,24 +1,21 @@
 ﻿using System.Collections.Generic;
-using StdExt.Enumerable;
+using StdExt.Collections;
 using Xunit;
 
-namespace StdExt.Tests.Enumerable
+namespace StdExt.Tests.Collections
 {
     public class EnumerableExtenderTests
     {
         [Theory]
         [InlineData(null, true)]
-        [MemberData(nameof(GetTestData))]
-        public void IsNullOrEmpty_VariousInputs_ReturnsExpected(
-            IEnumerable<int> input,
-            bool expected
-        )
+        [MemberData(nameof(IsNullOrEmpty_TestData))]
+        public void IsNullOrEmpty(IEnumerable<int> input, bool expected)
         {
             var result = input.IsNullOrEmpty();
             Assert.Equal(expected, result);
         }
 
-        public static IEnumerable<object[]> GetTestData()
+        public static IEnumerable<object[]> IsNullOrEmpty_TestData()
         {
             yield return new object[] { new List<int>(), true };
             yield return new object[]
@@ -28,12 +25,7 @@ namespace StdExt.Tests.Enumerable
             };
             yield return new object[] { new int[] { }, true };
             yield return new object[] { new int[] { 42 }, false };
-            yield return new object[] { GetLazyEnumerable(), false };
-        }
-
-        private static IEnumerable<int> GetLazyEnumerable()
-        {
-            yield return 99;
+            yield return new object[] { Enumerable.Range(1, 1), false };
         }
     }
 }
