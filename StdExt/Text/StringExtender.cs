@@ -11,11 +11,40 @@ namespace StdExt.Text
         /// <param name="begin">開始地点</param>
         /// <param name="end">終了地点</param>
         /// <returns></returns>
-        public static string Substr(this string s, int begin, int end)
+        public static string Substr(
+            this string s,
+            int? begin = null,
+            int? end = null
+        )
         {
-            begin = begin < 0 ? s.Length + begin : begin;
-            end = end < 0 ? s.Length + end : end;
-            return s.Substring(begin, end);
+            if (s == null)
+            {
+                throw new ArgumentNullException(nameof(s));
+            }
+            int from = begin ?? 0;
+            int to = end ?? s.Length;
+
+            if (from < 0)
+            {
+                from += s.Length;
+                to += s.Length;
+            }
+            if (to < 0)
+            {
+                to += s.Length;
+            }
+
+            from = Math.Clamp(from, 0, s.Length);
+            to = Math.Clamp(to, 0, s.Length);
+            if (to < from)
+            {
+                return string.Empty;
+            }
+#if VERSION_LESSER_8
+            return s.Substring(from, to - from);
+#else
+            return s[from..to];
+#endif
         }
 
         /// <summary>
