@@ -2,16 +2,6 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "build_logger_demo",
-            "command": "dotnet",
-            "type": "process",
-            "args": [
-                "build",
-                "${workspaceFolder}/logger_demo/logger_demo.csproj"
-            ],
-            "problemMatcher": "$msCompile"
-        },
-        {
             "label": "build_config",
             "command": "dotnet",
             "type": "process",
