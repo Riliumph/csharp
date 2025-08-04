@@ -3,7 +3,7 @@ using System.Text.Json;
 using StdExt.Text;
 using Xunit;
 
-namespace StdExt.Text.Tests
+namespace StdExt.Tests.Text
 {
     public class JsonExtender
     {
