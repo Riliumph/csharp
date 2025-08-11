@@ -9,7 +9,7 @@ namespace logger.Logging
 {
     public static class Logger
     {
-        private static readonly object _lock = new();
+        private static readonly Lock _lock = new();
         private static ILoggerFactory? _loggerFactory;
 
         private static LogEventLevel _lv = LogEventLevel.Information;
