@@ -1,16 +1,18 @@
 using logger.Logging.Extensions;
 using Microsoft.Extensions.Logging;
 using Serilog;
+using Serilog.Events;
 using Serilog.Extensions.Logging;
 using Serilog.Formatting.Json;
-using MsLogging = Microsoft.Extensions.Logging;
 
 namespace logger.Logging
 {
     public static class Logger
     {
-        private static readonly object _lock = new();
-        private static MsLogging.ILoggerFactory? _loggerFactory;
+        private static readonly Lock _lock = new();
+        private static ILoggerFactory? _loggerFactory;
+
+        private static LogEventLevel _lv = LogEventLevel.Information;
 
         // private static string _logFilePath = "logs/app.log";
 
@@ -19,7 +21,7 @@ namespace logger.Logging
         /// </summary>
         /// <typeparam name="T">実行するクラス</typeparam>
         /// <returns>ロガーインスタンス</returns>
-        public static MsLogging.ILogger<T> Get<T>()
+        public static ILogger<T> Get<T>()
         {
             if (_loggerFactory == null)
             {
@@ -31,14 +33,26 @@ namespace logger.Logging
             return _loggerFactory!.CreateLogger<T>();
         }
 
+        public static void SetLevel(string level)
+        {
+            _lv = level.ToLower() switch
+            {
+                "debug" => LogEventLevel.Debug,
+                "info" => LogEventLevel.Information,
+                "warn" => LogEventLevel.Warning,
+                "error" => LogEventLevel.Error,
+                _ => _lv,
+            };
+        }
+
         /// <summary>
         /// ロガーファクトリーの生成関数
         /// </summary>
         /// <returns>ロガーファクトリーインスタンス</returns>
-        private static MsLogging.ILoggerFactory CreateFactory()
+        private static ILoggerFactory CreateFactory()
         {
             Log.Logger = new LoggerConfiguration()
-                .MinimumLevel.Debug()
+                .MinimumLevel.Is(_lv)
                 .Enrich.WithCaller()
                 .WriteTo.Console(
                     outputTemplate: "[{Timestamp:HH:mm:ss} {Level:u3} {Caller}] {Message:lj}{NewLine}{Exception}"
