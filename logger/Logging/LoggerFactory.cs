@@ -52,7 +52,7 @@ namespace logger.Logging
         private static MsLogging.ILoggerFactory CreateFactory()
         {
             Log.Logger = new LoggerConfiguration()
-                .MinimumLevel.Debug()
+                .MinimumLevel.Is(_lv)
                 .Enrich.WithCaller()
                 .WriteTo.Console(
                     outputTemplate: "[{Timestamp:HH:mm:ss} {Level:u3} {Caller}] {Message:lj}{NewLine}{Exception}"
