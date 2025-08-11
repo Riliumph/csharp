@@ -3,14 +3,13 @@ using Microsoft.Extensions.Logging;
 using Serilog;
 using Serilog.Extensions.Logging;
 using Serilog.Formatting.Json;
-using MsLogging = Microsoft.Extensions.Logging;
 
 namespace logger.Logging
 {
     public static class Logger
     {
         private static readonly object _lock = new();
-        private static MsLogging.ILoggerFactory? _loggerFactory;
+        private static ILoggerFactory? _loggerFactory;
 
         private static LogEventLevel _lv = LogEventLevel.Information;
 
@@ -21,7 +20,7 @@ namespace logger.Logging
         /// </summary>
         /// <typeparam name="T">実行するクラス</typeparam>
         /// <returns>ロガーインスタンス</returns>
-        public static MsLogging.ILogger<T> Get<T>()
+        public static ILogger<T> Get<T>()
         {
             if (_loggerFactory == null)
             {
@@ -49,7 +48,7 @@ namespace logger.Logging
         /// ロガーファクトリーの生成関数
         /// </summary>
         /// <returns>ロガーファクトリーインスタンス</returns>
-        private static MsLogging.ILoggerFactory CreateFactory()
+        private static ILoggerFactory CreateFactory()
         {
             Log.Logger = new LoggerConfiguration()
                 .MinimumLevel.Is(_lv)
