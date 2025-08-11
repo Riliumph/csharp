@@ -12,6 +12,8 @@ namespace logger.Logging
         private static readonly object _lock = new();
         private static MsLogging.ILoggerFactory? _loggerFactory;
 
+        private static LogEventLevel _lv = LogEventLevel.Information;
+
         // private static string _logFilePath = "logs/app.log";
 
         /// <summary>
@@ -29,6 +31,18 @@ namespace logger.Logging
                 }
             }
             return _loggerFactory!.CreateLogger<T>();
+        }
+
+        public static void SetLevel(string level)
+        {
+            _lv = level.ToLower() switch
+            {
+                "debug" => LogEventLevel.Debug,
+                "info" => LogEventLevel.Information,
+                "warn" => LogEventLevel.Warning,
+                "error" => LogEventLevel.Error,
+                _ => _lv,
+            };
         }
 
         /// <summary>
