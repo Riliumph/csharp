@@ -8,11 +8,17 @@ class Program
 {
     static void Main()
     {
+        Logger.SetLevel("info");
         var logger = Logger.Get<Program>();
+        logger.LogDebug("Debug world");
         logger.LogInformation("Hello, logger!");
         logger.LogWarning("This is a warning.");
         logger.LogError("This is an error!");
-        var ctrl = new HogeController(Logger.Get<HogeController>());
+        logger.LogInformation("-----------------------");
+        Logger.SetLevel("error");
+        var hogeLogger = Logger.Get<HogeController>();
+        hogeLogger.LogInformation("再設定されないのでerrorでもinfoが出る");
+        var ctrl = new HogeController(hogeLogger);
         var data = new Dictionary<string, object>
         {
             { "id", 123 },
