@@ -1,6 +1,7 @@
 using logger.Logging.Extensions;
 using Microsoft.Extensions.Logging;
 using Serilog;
+using Serilog.Events;
 using Serilog.Extensions.Logging;
 using Serilog.Formatting.Json;
 
