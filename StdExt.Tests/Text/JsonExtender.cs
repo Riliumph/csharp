@@ -1,7 +1,4 @@
-using System.Collections.Generic;
-using System.Text.Json;
 using StdExt.Text;
-using Xunit;
 
 namespace StdExt.Tests.Text
 {

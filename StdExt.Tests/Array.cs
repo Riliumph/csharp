@@ -1,6 +1,3 @@
-using System.Net;
-using System.Reflection.Metadata;
-
 namespace StdExt.Tests
 {
     public class ArrayExtender

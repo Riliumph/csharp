@@ -1,4 +1,3 @@
-using System.ComponentModel;
 using StdExt.Text;
 
 namespace StdExt.Tests.Text

@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using StdExt.Collections;
-using Xunit;
+﻿using StdExt.Collections;
 
 namespace StdExt.Tests.Collections
 {
