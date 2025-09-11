@@ -1,5 +1,3 @@
-using System.ComponentModel;
-
 namespace StdExt.Text
 {
     public static class StringExtender
@@ -34,8 +32,8 @@ namespace StdExt.Text
                 to += s.Length;
             }
 
-            from = Math.Clamp(from, 0, s.Length);
-            to = Math.Clamp(to, 0, s.Length);
+            from = System.Math.Clamp(from, 0, s.Length);
+            to = System.Math.Clamp(to, 0, s.Length);
             if (to < from)
             {
                 return string.Empty;
