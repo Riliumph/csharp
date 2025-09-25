@@ -4,7 +4,9 @@ namespace StdExt.Collections
 {
     public static class GroupBy
     {
-        public static Dictionary<TKey, List<TValue>> ToDictionary<TKey, TValue>(List<Dictionary<TKey, TValue>> list)
+        public static Dictionary<TKey, List<TValue>> ToDictionary<TKey, TValue>(
+            List<Dictionary<TKey, TValue>> list
+        )
             where TKey : notnull
         {
             var result = new Dictionary<TKey, List<TValue>>();
@@ -23,9 +25,12 @@ namespace StdExt.Collections
 
             return result;
         }
+
         // OrderedDictionary 版
-        public static OrderedDictionary ToOrderedDictionary<TKey, TValue>(List<Dictionary<TKey, TValue>> list)
-                    where TKey : notnull
+        public static OrderedDictionary ToOrderedDictionary<TKey, TValue>(
+            List<Dictionary<TKey, TValue>> list
+        )
+            where TKey : notnull
         {
             var result = new OrderedDictionary();
 
