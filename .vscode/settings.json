@@ -1,14 +1,14 @@
 {
+    "[csharp]": {
+        "editor.defaultFormatter": "ms-dotnettools.csharp"
+        // "editor.defaultFormatter": "csharpier.csharpier-vscode",
+    },
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
     "dotnet.defaultSolution": "logger.slnx",
     "editor.codeActionsOnSave": {
         "source.organizeImports": "never"
     },
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "csharpier.csharpier-vscode",
-    "[json]": {
-        "editor.defaultFormatter": "vscode.json-language-features"
-    },
-    "[csharp]": {
-        "editor.defaultFormatter": "ms-dotnettools.csharp"
-    },
+    "editor.formatOnSave": true
 }

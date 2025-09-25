@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using logger_demo.Hoge;
+﻿using logger_demo.Hoge;
 using logger.Logging;
 using Microsoft.Extensions.Logging;
 
