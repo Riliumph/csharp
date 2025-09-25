@@ -4,6 +4,7 @@ namespace logger_demo.Hoge
     {
         private int _id;
         private string _name;
+
         public Hoge(int id, string name)
         {
             _id = id;
@@ -20,6 +21,7 @@ namespace logger_demo.Hoge
             get { return _name; }
             set { _name = value; }
         }
+
         public override string ToString()
         {
             return $"Hoge(Id: {Id}, Name: {Name})";

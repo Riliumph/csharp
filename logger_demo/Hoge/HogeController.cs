@@ -1,5 +1,3 @@
-using System;
-using System.Collections.Generic;
 using Microsoft.Extensions.Logging;
 
 namespace logger_demo.Hoge
@@ -7,6 +5,7 @@ namespace logger_demo.Hoge
     public class HogeController
     {
         private readonly ILogger<HogeController> _logger;
+
         public HogeController(ILogger<HogeController> logger)
         {
             _logger = logger;
