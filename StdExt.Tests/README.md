@@ -23,5 +23,5 @@ $ dotnet test
 ```
 
 ```console
-$ dotnet test --logger "console;verbosity=detailed"
+$ dotnet test StdExt.Tests/StdExt.Tests.csproj --logger "console;verbosity=detailed"
 ```
