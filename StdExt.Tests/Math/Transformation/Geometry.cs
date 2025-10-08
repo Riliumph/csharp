@@ -13,8 +13,7 @@ namespace StdExt.Tests.Math.Transformation
             Assert.Equal(expected, result);
         }
 
-        public static TheoryData<Point, Size, Size, Point> ProjectPointData
-        ()
+        public static TheoryData<Point, Size, Size, Point> ProjectPointData()
         {
             return new TheoryData<Point, Size, Size, Point>
             {

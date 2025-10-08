@@ -40,5 +40,16 @@ namespace StdExt.Drawing
             var scaleY = srcH / dstH;
             return (scaleX, scaleY);
         }
+
+        /// <summary>
+        /// srcの解像度が16:9であるかを確かめる関数
+        /// </summary>
+        /// <param name="src">サイズ</param>
+        /// <returns>16:9であるかどうか</returns>
+        public static bool Is16by9(this Size src)
+        {
+            double ratio = (double)src.Width / src.Height;
+            return System.Math.Abs(ratio - 16.0 / 9.0) < 0.01;
+        }
     }
 }
