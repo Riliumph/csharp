@@ -8,7 +8,7 @@ namespace StdExt.Test.Drawing
         [MemberData(nameof(AspectRatioTestData))]
         public void AspectRatio(Size size, double expected)
         {
-            var result = size.AspectRatio();
+            var result = size.AspectRatio<double>();
             Assert.Equal(expected, result, 5);
         }
 
@@ -25,7 +25,7 @@ namespace StdExt.Test.Drawing
         [MemberData(nameof(ScaleRatioTestData))]
         public void ScaleRatio(Size src, Size dst, (double, double) expected)
         {
-            var result = src.ScaleRatio(dst);
+            var result = src.ScaleRatio<double>(dst);
             Assert.Equal(expected, result);
         }
 
