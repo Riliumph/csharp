@@ -41,5 +41,30 @@ namespace StdExt.Test.Drawing
                 { new Size(3840, 2160), new Size(1920, 1080), (2, 2) },
             };
         }
+
+        [Theory]
+        [MemberData(nameof(ResizeToFitData))]
+        public void ResizeToFit(Size src, Size dst, Size expected)
+        {
+            var result = src.ResizeToFit(dst);
+            Assert.Equal(expected, result);
+        }
+
+        public static TheoryData<Size, Size, Size> ResizeToFitData()
+        {
+            return new TheoryData<Size, Size, Size>
+            {
+                {
+                    new Size(3840, 2160),
+                    new Size(1920, 1080),
+                    new Size(1920, 1080)
+                },
+                {
+                    new Size(3840, 2160),
+                    new Size(800, 600),
+                    new Size(800, 450)
+                },
+            };
+        }
     }
 }
