@@ -66,5 +66,22 @@ namespace StdExt.Test.Drawing
                 },
             };
         }
+
+        [Theory]
+        [MemberData(nameof(OffsetAtCenterData))]
+        public void OffsetAtCenter(Size src, Size dst, Point expected)
+        {
+            var result = src.OffsetAtCenter(dst);
+            Assert.Equal(expected, result);
+        }
+
+        public static TheoryData<Size, Size, Point> OffsetAtCenterData()
+        {
+            return new TheoryData<Size, Size, Point>
+            {
+                { new Size(640, 480), new Size(800, 600), new Point(80, 60) },
+                { new Size(800, 600), new Size(640, 480), new Point(-80, -60) },
+            };
+        }
     }
 }

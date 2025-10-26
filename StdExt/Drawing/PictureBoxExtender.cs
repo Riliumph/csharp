@@ -10,11 +10,8 @@ namespace StdExt.Drawing
         {
             if (canvas.Image == null)
                 return Rectangle.Empty;
-
             var resized = canvas.Image.Size.ResizeToFit(canvas.Size);
-            var offset = Point.Empty;
-            offset.X = (canvas.Width - resized.Width) / 2;
-            offset.Y = (canvas.Height - resized.Height) / 2;
+            var offset = resized.OffsetAtCenter(canvas.Size);
             return new Rectangle(offset, resized);
         }
     }

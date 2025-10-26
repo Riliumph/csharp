@@ -64,5 +64,20 @@ namespace StdExt.Drawing
                 return new Size((int)(dst.Height * srcAspect), dst.Height);
             }
         }
+
+        /// <summary>
+        /// 元のサイズを別のサイズ枠の中央に収めた場合のオフセットを付与する関数
+        /// オフセットの場所を記録するためSizeではなくRectangleで返す。
+        /// </summary>
+        /// <param name="src"></param>
+        /// <param name="dst"></param>
+        /// <returns>オフセットを考慮したサイズ</returns>
+        public static Point OffsetAtCenter(this Size src, Size dst)
+        {
+            var offset = Point.Empty;
+            offset.X = (dst.Width - src.Width) / 2;
+            offset.Y = (dst.Height - src.Height) / 2;
+            return offset;
+        }
     }
 }
