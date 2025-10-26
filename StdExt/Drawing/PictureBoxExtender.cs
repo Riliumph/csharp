@@ -13,25 +13,25 @@ namespace StdExt.Drawing
 
             var imgAspect = (float)canvas.Image.Size.AspectRatio<float>();
             var boxAspect = (float)canvas.Size.AspectRatio<float>();
-
-            int drawWidth;
-            int drawHeight;
             bool occuredLetterBox = boxAspect < imgAspect;
+
+            var drawSize = Size.Empty;
             if (occuredLetterBox)
             {
-                drawWidth = canvas.Width;
-                drawHeight = (int)(canvas.Width / imgAspect);
+                drawSize.Width = canvas.Width;
+                drawSize.Height = (int)(canvas.Width / imgAspect);
             }
             else
             {
-                drawWidth = (int)(canvas.Height * imgAspect);
-                drawHeight = canvas.Height;
+                drawSize.Width = (int)(canvas.Height * imgAspect);
+                drawSize.Height = canvas.Height;
             }
 
-            int offsetX = (canvas.Width - drawWidth) / 2;
-            int offsetY = (canvas.Height - drawHeight) / 2;
+            var offset = Point.Empty;
+            offset.X = (canvas.Width - drawSize.Width) / 2;
+            offset.Y = (canvas.Height - drawSize.Height) / 2;
 
-            return new Rectangle(offsetX, offsetY, drawWidth, drawHeight);
+            return new Rectangle(offset, drawSize);
         }
     }
 }
