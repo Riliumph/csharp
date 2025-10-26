@@ -17,8 +17,18 @@ namespace StdExt.Tests.Math.Transformation
         {
             return new TheoryData<Point, Size, Size, Point>
             {
-                {new Point(100, 100), new Size(3840, 2160), new Size(800,800), new Point(480,-360)},
-                {new Point(100, 100), new Size(3840, 2160), new Size(1920,1080), new Point(200,200)},
+                {
+                    new Point(100, 100),
+                    new Size(3840, 2160),
+                    new Size(800, 800),
+                    new Point(480, -360)
+                },
+                {
+                    new Point(100, 100),
+                    new Size(3840, 2160),
+                    new Size(1920, 1080),
+                    new Point(200, 200)
+                },
             };
         }
     }
