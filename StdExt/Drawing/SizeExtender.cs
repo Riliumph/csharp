@@ -40,5 +40,29 @@ namespace StdExt.Drawing
             var scaleY = srcH / dstH;
             return (scaleX, scaleY);
         }
+
+        /// <summary>
+        /// あるSizeを別のサイズ枠に収めるためにリサイズする関数
+        /// </summary>
+        /// <param name="src"></param>
+        /// <param name="dst"></param>
+        /// <returns></returns>
+        public static Size ResizeToFit(this Size src, Size dst)
+        {
+            if (src.Width == 0 || src.Height == 0)
+                return Size.Empty;
+            var srcAspect = src.AspectRatio<float>();
+            var dstAspect = dst.AspectRatio<float>();
+            var occuredLetterBox = dstAspect < srcAspect;
+
+            if (occuredLetterBox)
+            {
+                return new Size(dst.Width, (int)(dst.Width / srcAspect));
+            }
+            else
+            {
+                return new Size((int)(dst.Height * srcAspect), dst.Height);
+            }
+        }
     }
 }
