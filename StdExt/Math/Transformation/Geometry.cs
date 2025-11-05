@@ -5,7 +5,7 @@ namespace StdExt.Math.Transformation
     public static class Geometry
     {
         /// <summary>
-        /// 空間Aから空間Bへ座標をを射影する関数。
+        /// 座標点pを空間Aから空間Bへ射影する関数。
         /// </summary>
         /// <param name="p"></param>
         /// <param name="src"></param>

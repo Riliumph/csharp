@@ -52,11 +52,12 @@ namespace StdExt.Drawing
             return System.Math.Abs(ratio - 16.0 / 9.0) < 0.01;
         }
 
+        /// <summary>
         /// あるSizeを別のサイズ枠に収めるためにリサイズする関数
         /// </summary>
-        /// <param name="src"></param>
-        /// <param name="dst"></param>
-        /// <returns></returns>
+        /// <param name="src">リサイズ対象のサイズ</param>
+        /// <param name="dst">リサイズする枠</param>
+        /// <returns>リサイズ後のサイズ</returns>
         public static Size ResizeToFit(this Size src, Size dst)
         {
             if (src.Width == 0 || src.Height == 0)
@@ -77,11 +78,10 @@ namespace StdExt.Drawing
 
         /// <summary>
         /// 元のサイズを別のサイズ枠の中央に収めた場合のオフセットを付与する関数
-        /// オフセットの場所を記録するためSizeではなくRectangleで返す。
         /// </summary>
-        /// <param name="src"></param>
-        /// <param name="dst"></param>
-        /// <returns>オフセットを考慮したサイズ</returns>
+        /// <param name="src">元のサイズ</param>
+        /// <param name="dst">サイズ枠</param>
+        /// <returns>オフセット値</returns>
         public static Point OffsetAtCenter(this Size src, Size dst)
         {
             var offset = Point.Empty;
